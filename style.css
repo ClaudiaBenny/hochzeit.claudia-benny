@@ -326,3 +326,57 @@ footer {
     font-size: 27px;
   }
 }
+/* Hochzeitstag */
+
+.wedding-section {
+  padding: 120px 20px 130px;
+  text-align: center;
+  background: var(--cream);
+  border-top: 1px solid rgba(168, 137, 91, 0.15);
+}
+
+.wedding-section h2 {
+  max-width: 850px;
+  margin: 0 auto 30px;
+  color: var(--dark);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 50px;
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.wedding-ornament {
+  color: var(--gold);
+  font-size: 28px;
+  margin: 5px 0 35px;
+}
+
+.wedding-text {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #55504a;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  line-height: 1.7;
+}
+
+.wedding-text p + p {
+  margin-top: 28px;
+}
+
+/* Hochzeitstag – Smartphone */
+
+@media (max-width: 600px) {
+  .wedding-section {
+    padding: 80px 20px 90px;
+  }
+
+  .wedding-section h2 {
+    font-size: 39px;
+  }
+
+  .wedding-text {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
