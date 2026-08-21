@@ -1,33 +1,255 @@
-const weddingDate = new Date("2027-06-19T14:00:00+02:00").getTime();
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
 
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = weddingDate - now;
-
-  if (distance <= 0) {
-    document.getElementById("days").textContent = "0";
-    document.getElementById("hours").textContent = "0";
-    document.getElementById("minutes").textContent = "0";
-    document.getElementById("seconds").textContent = "0";
-    return;
-  }
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const minutes = Math.floor(
-    (distance % (1000 * 60 * 60)) / (1000 * 60)
-  );
-  const seconds = Math.floor(
-    (distance % (1000 * 60)) / 1000
-  );
-
-  document.getElementById("days").textContent = days;
-  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+:root {
+  --cream: #f8f5ef;
+  --dark: #292521;
+  --gold: #a8895b;
+  --light-gold: #d8c8aa;
+  --white: #ffffff;
 }
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--dark);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 5%;
+  background: rgba(248, 245, 239, 0.96);
+  border-bottom: 1px solid rgba(168, 137, 91, 0.25);
+}
+
+.brand {
+  color: var(--dark);
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.brand span {
+  color: var(--gold);
+  padding: 0 5px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--gold);
+}
+
+.hero {
+  width: 100%;
+  background: var(--cream);
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+  object-fit: cover;
+}
+
+.countdown-section {
+  text-align: center;
+  padding: 90px 20px 100px;
+  background: var(--cream);
+}
+
+.section-kicker {
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 5px;
+  margin-bottom: 12px;
+}
+
+.ornament {
+  color: var(--gold);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.date-line {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  margin-bottom: 40px;
+}
+
+.date-line strong {
+  font-weight: 600;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 55px;
+  margin: 30px 0 45px;
+}
+
+.counter {
+  min-width: 100px;
+}
+
+.counter span {
+  display: block;
+  color: var(--dark);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 58px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.counter small {
+  display: block;
+  margin-top: 10px;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.floral-line {
+  color: var(--light-gold);
+  font-size: 26px;
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+}
+
+.for-ever {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--gold);
+  font-size: 25px;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.heart {
+  color: var(--gold);
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+.placeholder {
+  min-height: 400px;
+  padding: 100px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(168, 137, 91, 0.2);
+}
+
+.placeholder h2 {
+  margin-bottom: 20px;
+  color: var(--dark);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 500;
+}
+
+.placeholder p {
+  max-width: 600px;
+  margin: auto;
+  color: #666;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 5%;
+  background: var(--dark);
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+}
+
+/* Smartphone */
+
+@media (max-width: 900px) {
+  .site-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 18px;
+  }
+
+  .countdown {
+    gap: 15px;
+  }
+
+  .counter {
+    min-width: 70px;
+  }
+
+  .counter span {
+    font-size: 42px;
+  }
+
+  .counter small {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 600px) {
+  .countdown-section {
+    padding: 60px 15px 70px;
+  }
+
+  .date-line {
+    font-size: 22px;
+  }
+
+  .countdown {
+    gap: 8px;
+  }
+
+  .counter {
+    min-width: 62px;
+  }
+
+  .counter span {
+    font-size: 32px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+}
