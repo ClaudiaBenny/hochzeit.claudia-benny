@@ -379,3 +379,70 @@ footer {
     line-height: 1.6;
   }
 }
+/* Infos für Gäste */
+
+.guest-section {
+  padding: 130px 20px 140px;
+  text-align: center;
+  background: #f8f5ef;
+  border-top: 1px solid rgba(168, 137, 91, 0.2);
+}
+
+.guest-section h2 {
+  margin: 0 auto 30px;
+  color: var(--dark);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 50px;
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.guest-ornament {
+  color: var(--gold);
+  font-size: 28px;
+  margin-bottom: 35px;
+}
+
+.guest-title {
+  max-width: 750px;
+  margin: 0 auto 40px;
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 29px;
+  line-height: 1.3;
+  font-style: italic;
+}
+
+.guest-text {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #55504a;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  line-height: 1.7;
+}
+
+.guest-text p + p {
+  margin-top: 30px;
+}
+
+/* Infos für Gäste – Smartphone */
+
+@media (max-width: 600px) {
+  .guest-section {
+    padding: 90px 20px 100px;
+  }
+
+  .guest-section h2 {
+    font-size: 39px;
+  }
+
+  .guest-title {
+    font-size: 25px;
+  }
+
+  .guest-text {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
