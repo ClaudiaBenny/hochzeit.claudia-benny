@@ -80,8 +80,7 @@ nav a.active {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 78vh;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .countdown-section {
