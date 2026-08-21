@@ -195,6 +195,7 @@ footer {
 }
 
 /* Smartphone */
+
 @media (max-width: 900px) {
   .site-header {
     flex-direction: column;
