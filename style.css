@@ -253,3 +253,76 @@ footer {
     gap: 5px;
   }
 }
+/* Unsere Geschichte */
+
+.story-section {
+  padding: 120px 20px 130px;
+  text-align: center;
+  background: #ffffff;
+  border-top: 1px solid rgba(168, 137, 91, 0.15);
+}
+
+.story-section h2 {
+  margin: 0 auto 30px;
+  color: var(--dark);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.story-ornament {
+  color: var(--gold);
+  font-size: 28px;
+  margin: 5px 0 35px;
+}
+
+.story-text {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #55504a;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  line-height: 1.7;
+}
+
+.story-text p + p {
+  margin-top: 28px;
+}
+
+.story-names {
+  margin-top: 50px;
+  color: var(--dark);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.story-for-ever {
+  margin-top: 5px;
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-style: italic;
+}
+
+/* Unsere Geschichte – Smartphone */
+
+@media (max-width: 600px) {
+  .story-section {
+    padding: 80px 20px 90px;
+  }
+
+  .story-section h2 {
+    font-size: 40px;
+  }
+
+  .story-text {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .story-names {
+    font-size: 27px;
+  }
+}
